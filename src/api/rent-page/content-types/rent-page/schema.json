@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "rent_pages",
+  "info": {
+    "singularName": "rent-page",
+    "pluralName": "rent-pages",
+    "displayName": "Rent page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "chooseCamperSection": {
+      "displayName": "imagesListSection",
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.images-list-section"
+    },
+    "chooseCaravanSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.images-list-section"
+    },
+    "subtitle": {
+      "type": "string"
+    }
+  }
+}

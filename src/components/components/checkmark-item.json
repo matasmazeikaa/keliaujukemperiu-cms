@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_components_checkmark_items",
+  "info": {
+    "displayName": "checkmark-item"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  }
+}

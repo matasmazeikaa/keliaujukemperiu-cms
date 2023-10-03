@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "partners_sections",
+  "info": {
+    "singularName": "partners-section",
+    "pluralName": "partners-sections",
+    "displayName": "Partners section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "partnersLogos": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

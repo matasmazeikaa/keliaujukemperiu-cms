@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_page_categories",
+  "info": {
+    "displayName": "Page Categories",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "pageCategory": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.image-box-link"
+    }
+  }
+}

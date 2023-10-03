@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_us_pages",
+  "info": {
+    "singularName": "about-us-page",
+    "pluralName": "about-us-pages",
+    "displayName": "About us page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "whyPickUsSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.enumeration-section"
+    },
+    "aboutUsSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.images-left-text-right"
+    }
+  }
+}

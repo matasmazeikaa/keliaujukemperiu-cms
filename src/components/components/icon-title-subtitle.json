@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_components_icon_title_subtitles",
+  "info": {
+    "displayName": "iconTitleSubtitle"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

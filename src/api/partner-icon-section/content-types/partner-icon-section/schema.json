@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "partner_icon_sections",
+  "info": {
+    "singularName": "partner-icon-section",
+    "pluralName": "partner-icon-sections",
+    "displayName": "Partner Icon Section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

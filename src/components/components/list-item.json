@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_components_list_items",
+  "info": {
+    "displayName": "listItem",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    }
+  }
+}

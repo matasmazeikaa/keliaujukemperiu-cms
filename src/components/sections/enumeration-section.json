@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_enumeration_sections",
+  "info": {
+    "displayName": "Enumeration section"
+  },
+  "options": {},
+  "attributes": {
+    "listItem": {
+      "displayName": "listItem",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.list-item"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

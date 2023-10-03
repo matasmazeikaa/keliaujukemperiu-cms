@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "camper_equipment_pages",
+  "info": {
+    "singularName": "camper-equipment-page",
+    "pluralName": "camper-equipment-pages",
+    "displayName": "Camper equipment page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "aboutCamperEquipmentSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.images-left-text-right"
+    },
+    "choosePartnerEquipmentSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.page-categories"
+    }
+  }
+}

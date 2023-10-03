@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_sections_images_list_sections",
+  "info": {
+    "displayName": "imagesListSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "imageTop": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "imageBottom": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "listItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.list-item"
+    },
+    "ctaButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.button"
+    }
+  }
+}

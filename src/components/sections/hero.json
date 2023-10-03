@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_sections_heroes",
+  "info": {
+    "displayName": "Hero",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "ctaButton": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.button"
+    },
+    "values": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.checkmark-item"
+    }
+  }
+}

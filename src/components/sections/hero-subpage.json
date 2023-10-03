@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_sections_hero_subpages",
+  "info": {
+    "displayName": "Hero subpage"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}
