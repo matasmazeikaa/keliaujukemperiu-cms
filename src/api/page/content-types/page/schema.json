@@ -17,22 +17,14 @@
   },
   "attributes": {
     "title": {
-      "type": "string",
-      "unique": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
-    },
-    "url": {
+      },
       "type": "string",
-      "unique": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "required": true,
+      "unique": true
     }
   }
 }

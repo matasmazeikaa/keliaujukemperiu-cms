@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_sections_hero_travel_guarantee_sections",
+  "info": {
+    "displayName": "Hero travel guarantee section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "listItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.list-item"
+    }
+  }
+}

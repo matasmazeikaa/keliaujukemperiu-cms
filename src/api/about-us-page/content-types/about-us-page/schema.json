@@ -24,6 +24,16 @@
       "type": "component",
       "repeatable": false,
       "component": "sections.images-left-text-right"
+    },
+    "info": {
+      "displayName": "info",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.info"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
     }
   }
 }

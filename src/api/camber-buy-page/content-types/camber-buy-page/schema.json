@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "camber_buy_pages",
+  "info": {
+    "singularName": "camber-buy-page",
+    "pluralName": "camber-buy-pages",
+    "displayName": "Camper buy page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "aboutSellCamperSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.images-list-section"
+    },
+    "aboutSellCaravanSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.images-list-section"
+    },
+    "aboutFinanceSection": {
+      "displayName": "simpleSection",
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.simple-section"
+    }
+  }
+}

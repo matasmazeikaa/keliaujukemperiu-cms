@@ -691,6 +691,8 @@ export interface ApiAboutUsPageAboutUsPage extends Schema.SingleType {
     title: Attribute.String;
     whyPickUsSection: Attribute.Component<'sections.enumeration-section'>;
     aboutUsSection: Attribute.Component<'sections.images-left-text-right'>;
+    info: Attribute.Component<'components.info', true>;
+    slug: Attribute.UID<'api::about-us-page.about-us-page', 'title'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -742,6 +744,40 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   };
 }
 
+export interface ApiCamberBuyPageCamberBuyPage extends Schema.SingleType {
+  collectionName: 'camber_buy_pages';
+  info: {
+    singularName: 'camber-buy-page';
+    pluralName: 'camber-buy-pages';
+    displayName: 'Camper buy page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    aboutSellCamperSection: Attribute.Component<'sections.images-list-section'>;
+    aboutSellCaravanSection: Attribute.Component<'sections.images-list-section'>;
+    aboutFinanceSection: Attribute.Component<'sections.simple-section'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::camber-buy-page.camber-buy-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::camber-buy-page.camber-buy-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCamperCamper extends Schema.CollectionType {
   collectionName: 'campers';
   info: {
@@ -770,6 +806,9 @@ export interface ApiCamperCamper extends Schema.CollectionType {
     isForRent: Attribute.Boolean;
     price: Attribute.Decimal;
     heating: Attribute.String;
+    slug: Attribute.UID<'api::camper.camper', 'title'> & Attribute.Required;
+    innerPageImages: Attribute.Media;
+    about: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -852,6 +891,37 @@ export interface ApiCamperRentPageCamperRentPage extends Schema.SingleType {
   };
 }
 
+export interface ApiFinancePageFinancePage extends Schema.SingleType {
+  collectionName: 'finance_pages';
+  info: {
+    singularName: 'finance-page';
+    pluralName: 'finance-pages';
+    displayName: 'Finance page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    aboutFinancingSection: Attribute.Component<'sections.images-left-text-right'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::finance-page.finance-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::finance-page.finance-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiGotQuestionSectionGotQuestionSection
   extends Schema.SingleType {
   collectionName: 'got_question_sections';
@@ -859,6 +929,7 @@ export interface ApiGotQuestionSectionGotQuestionSection
     singularName: 'got-question-section';
     pluralName: 'got-question-sections';
     displayName: 'Got Question Section';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -867,6 +938,7 @@ export interface ApiGotQuestionSectionGotQuestionSection
     title: Attribute.String;
     subtitle: Attribute.Text;
     ctaButton: Attribute.Component<'components.button'>;
+    image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -929,7 +1001,8 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
         'sections.hero',
         'sections.images-left-text-right',
         'sections.page-categories',
-        'sections.testimonial'
+        'sections.testimonial',
+        'sections.hero-travel-guarantee-section'
       ]
     >;
     createdAt: Attribute.DateTime;
@@ -968,13 +1041,7 @@ export interface ApiPagePage extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String &
-      Attribute.Unique &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    url: Attribute.String &
+      Attribute.Required &
       Attribute.Unique &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -994,6 +1061,48 @@ export interface ApiPagePage extends Schema.CollectionType {
       'api::page.page'
     >;
     locale: Attribute.String;
+  };
+}
+
+export interface ApiPartnerPartner extends Schema.CollectionType {
+  collectionName: 'partners';
+  info: {
+    singularName: 'partner';
+    pluralName: 'partners';
+    displayName: 'Partner';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Hero: Attribute.Component<'sections.partner-hero'>;
+    about: Attribute.RichText;
+    gallery: Attribute.Media;
+    camperPrice: Attribute.Component<'components.camper-prices', true>;
+    campers: Attribute.Relation<
+      'api::partner.partner',
+      'oneToMany',
+      'api::camper.camper'
+    >;
+    slug: Attribute.UID;
+    info: Attribute.Component<'components.info', true>;
+    thumbnailAbout: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::partner.partner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::partner.partner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
   };
 }
 
@@ -1207,13 +1316,16 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::blog.blog': ApiBlogBlog;
+      'api::camber-buy-page.camber-buy-page': ApiCamberBuyPageCamberBuyPage;
       'api::camper.camper': ApiCamperCamper;
       'api::camper-equipment-page.camper-equipment-page': ApiCamperEquipmentPageCamperEquipmentPage;
       'api::camper-rent-page.camper-rent-page': ApiCamperRentPageCamperRentPage;
+      'api::finance-page.finance-page': ApiFinancePageFinancePage;
       'api::got-question-section.got-question-section': ApiGotQuestionSectionGotQuestionSection;
       'api::home.home': ApiHomeHome;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::page.page': ApiPagePage;
+      'api::partner.partner': ApiPartnerPartner;
       'api::partner-icon-section.partner-icon-section': ApiPartnerIconSectionPartnerIconSection;
       'api::partners-section.partners-section': ApiPartnersSectionPartnersSection;
       'api::rent-page.rent-page': ApiRentPageRentPage;

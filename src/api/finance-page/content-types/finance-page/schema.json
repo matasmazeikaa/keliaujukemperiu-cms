@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "finance_pages",
+  "info": {
+    "singularName": "finance-page",
+    "pluralName": "finance-pages",
+    "displayName": "Finance page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "aboutFinancingSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.images-left-text-right"
+    }
+  }
+}

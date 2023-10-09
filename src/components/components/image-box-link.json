@@ -12,11 +12,6 @@
     "subtitle": {
       "type": "string"
     },
-    "page": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::page.page"
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -29,14 +24,18 @@
       ]
     },
     "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "to": {
+      "type": "string"
     }
   }
 }

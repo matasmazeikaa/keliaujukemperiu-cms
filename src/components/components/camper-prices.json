@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_components_camper_prices",
+  "info": {
+    "displayName": "camper-prices"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    }
+  }
+}

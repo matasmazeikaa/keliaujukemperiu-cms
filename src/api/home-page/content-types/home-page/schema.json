@@ -26,7 +26,8 @@
         "sections.hero",
         "sections.images-left-text-right",
         "sections.page-categories",
-        "sections.testimonial"
+        "sections.testimonial",
+        "sections.hero-travel-guarantee-section"
       ]
     }
   }
