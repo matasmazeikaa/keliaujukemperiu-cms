@@ -693,6 +693,7 @@ export interface ApiAboutUsPageAboutUsPage extends Schema.SingleType {
     aboutUsSection: Attribute.Component<'sections.images-left-text-right'>;
     info: Attribute.Component<'components.info', true>;
     slug: Attribute.UID<'api::about-us-page.about-us-page', 'title'>;
+    seo: Attribute.Component<'components.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -760,6 +761,7 @@ export interface ApiCamberBuyPageCamberBuyPage extends Schema.SingleType {
     aboutSellCamperSection: Attribute.Component<'sections.images-list-section'>;
     aboutSellCaravanSection: Attribute.Component<'sections.images-list-section'>;
     aboutFinanceSection: Attribute.Component<'sections.simple-section'>;
+    seo: Attribute.Component<'components.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -790,25 +792,30 @@ export interface ApiCamperCamper extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
-    previewDescription: Attribute.Text;
-    thumbnail: Attribute.Media;
+    title: Attribute.String & Attribute.Required;
+    previewDescription: Attribute.Text & Attribute.Required;
+    thumbnail: Attribute.Media & Attribute.Required;
     pricePerDay: Attribute.Decimal;
-    year: Attribute.Integer;
-    weight: Attribute.Decimal;
-    tankCapacity: Attribute.Decimal;
+    year: Attribute.Integer & Attribute.Required;
+    weight: Attribute.Decimal & Attribute.Required;
+    tankCapacity: Attribute.Decimal & Attribute.Required;
     isForSale: Attribute.Boolean & Attribute.DefaultTo<false>;
-    gearbox: Attribute.Enumeration<['Automatin\u0117', 'Mechanin\u0117']>;
-    placesToSleep: Attribute.Integer;
-    placesToSit: Attribute.Integer;
+    gearbox: Attribute.Enumeration<['Automatin\u0117', 'Mechanin\u0117']> &
+      Attribute.Required;
+    placesToSleep: Attribute.Integer & Attribute.Required;
+    placesToSit: Attribute.Integer & Attribute.Required;
     fridgeCapacity: Attribute.Decimal;
-    complectation: Attribute.Component<'components.list-item', true>;
+    complectation: Attribute.Component<'components.list-item', true> &
+      Attribute.Required;
     isForRent: Attribute.Boolean;
     price: Attribute.Decimal;
-    heating: Attribute.String;
+    heating: Attribute.String & Attribute.Required;
     slug: Attribute.UID<'api::camper.camper', 'title'> & Attribute.Required;
-    innerPageImages: Attribute.Media;
-    about: Attribute.RichText;
+    innerPageImages: Attribute.Media & Attribute.Required;
+    about: Attribute.RichText & Attribute.Required;
+    priceFull: Attribute.Component<'components.camper-prices', true>;
+    camperPriceInfo: Attribute.Component<'components.info', true>;
+    isCaravan: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -827,6 +834,37 @@ export interface ApiCamperCamper extends Schema.CollectionType {
   };
 }
 
+export interface ApiCamperBuyPageListCamperBuyPageList
+  extends Schema.SingleType {
+  collectionName: 'camper_buy_page_lists';
+  info: {
+    singularName: 'camper-buy-page-list';
+    pluralName: 'camper-buy-page-lists';
+    displayName: 'Camper buy page list';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::camper-buy-page-list.camper-buy-page-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::camper-buy-page-list.camper-buy-page-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCamperEquipmentPageCamperEquipmentPage
   extends Schema.SingleType {
   collectionName: 'camper_equipment_pages';
@@ -834,6 +872,7 @@ export interface ApiCamperEquipmentPageCamperEquipmentPage
     singularName: 'camper-equipment-page';
     pluralName: 'camper-equipment-pages';
     displayName: 'Camper equipment page';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -842,6 +881,7 @@ export interface ApiCamperEquipmentPageCamperEquipmentPage
     title: Attribute.String;
     aboutCamperEquipmentSection: Attribute.Component<'sections.images-left-text-right'>;
     choosePartnerEquipmentSection: Attribute.Component<'sections.page-categories'>;
+    seo: Attribute.Component<'components.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -866,6 +906,7 @@ export interface ApiCamperRentPageCamperRentPage extends Schema.SingleType {
     singularName: 'camper-rent-page';
     pluralName: 'camper-rent-pages';
     displayName: 'Camper rent page';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -873,6 +914,7 @@ export interface ApiCamperRentPageCamperRentPage extends Schema.SingleType {
   attributes: {
     title: Attribute.String;
     subtitle: Attribute.String;
+    seo: Attribute.Component<'components.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -891,12 +933,106 @@ export interface ApiCamperRentPageCamperRentPage extends Schema.SingleType {
   };
 }
 
+export interface ApiCaravanBuyPageListCaravanBuyPageList
+  extends Schema.SingleType {
+  collectionName: 'caravan_buy_page_lists';
+  info: {
+    singularName: 'caravan-buy-page-list';
+    pluralName: 'caravan-buy-page-lists';
+    displayName: 'Caravan buy page list';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::caravan-buy-page-list.caravan-buy-page-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::caravan-buy-page-list.caravan-buy-page-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCaravanRentPageCaravanRentPage extends Schema.SingleType {
+  collectionName: 'caravan_rent_pages';
+  info: {
+    singularName: 'caravan-rent-page';
+    pluralName: 'caravan-rent-pages';
+    displayName: 'Caravan rent page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    seo: Attribute.Component<'components.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::caravan-rent-page.caravan-rent-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::caravan-rent-page.caravan-rent-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiContactUsPageContactUsPage extends Schema.SingleType {
+  collectionName: 'contact_us_pages';
+  info: {
+    singularName: 'contact-us-page';
+    pluralName: 'contact-us-pages';
+    displayName: 'Contact us page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    seo: Attribute.Component<'components.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact-us-page.contact-us-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact-us-page.contact-us-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFinancePageFinancePage extends Schema.SingleType {
   collectionName: 'finance_pages';
   info: {
     singularName: 'finance-page';
     pluralName: 'finance-pages';
     displayName: 'Finance page';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -904,6 +1040,7 @@ export interface ApiFinancePageFinancePage extends Schema.SingleType {
   attributes: {
     title: Attribute.String;
     aboutFinancingSection: Attribute.Component<'sections.images-left-text-right'>;
+    seo: Attribute.Component<'components.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -957,29 +1094,6 @@ export interface ApiGotQuestionSectionGotQuestionSection
   };
 }
 
-export interface ApiHomeHome extends Schema.CollectionType {
-  collectionName: 'homes';
-  info: {
-    singularName: 'home';
-    pluralName: 'homes';
-    displayName: 'Home';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.Text;
-    landingImage: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
 export interface ApiHomePageHomePage extends Schema.SingleType {
   collectionName: 'home_pages';
   info: {
@@ -1005,6 +1119,7 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
         'sections.hero-travel-guarantee-section'
       ]
     >;
+    seo: Attribute.Component<'components.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1016,6 +1131,37 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNewsPageNewsPage extends Schema.SingleType {
+  collectionName: 'news_pages';
+  info: {
+    singularName: 'news-page';
+    pluralName: 'news-pages';
+    displayName: 'News page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    seo: Attribute.Component<'components.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::news-page.news-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::news-page.news-page',
       'oneToOne',
       'admin::user'
     > &
@@ -1208,6 +1354,7 @@ export interface ApiServicePageServicePage extends Schema.SingleType {
     singularName: 'service-page';
     pluralName: 'service-pages';
     displayName: 'Service Page';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1216,6 +1363,7 @@ export interface ApiServicePageServicePage extends Schema.SingleType {
     title: Attribute.String;
     aboutServiceSection: Attribute.Component<'sections.images-left-text-right'>;
     providedServicesSection: Attribute.Component<'sections.enumeration-section'>;
+    seo: Attribute.Component<'components.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1318,12 +1466,16 @@ declare module '@strapi/strapi' {
       'api::blog.blog': ApiBlogBlog;
       'api::camber-buy-page.camber-buy-page': ApiCamberBuyPageCamberBuyPage;
       'api::camper.camper': ApiCamperCamper;
+      'api::camper-buy-page-list.camper-buy-page-list': ApiCamperBuyPageListCamperBuyPageList;
       'api::camper-equipment-page.camper-equipment-page': ApiCamperEquipmentPageCamperEquipmentPage;
       'api::camper-rent-page.camper-rent-page': ApiCamperRentPageCamperRentPage;
+      'api::caravan-buy-page-list.caravan-buy-page-list': ApiCaravanBuyPageListCaravanBuyPageList;
+      'api::caravan-rent-page.caravan-rent-page': ApiCaravanRentPageCaravanRentPage;
+      'api::contact-us-page.contact-us-page': ApiContactUsPageContactUsPage;
       'api::finance-page.finance-page': ApiFinancePageFinancePage;
       'api::got-question-section.got-question-section': ApiGotQuestionSectionGotQuestionSection;
-      'api::home.home': ApiHomeHome;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::news-page.news-page': ApiNewsPageNewsPage;
       'api::page.page': ApiPagePage;
       'api::partner.partner': ApiPartnerPartner;
       'api::partner-icon-section.partner-icon-section': ApiPartnerIconSectionPartnerIconSection;

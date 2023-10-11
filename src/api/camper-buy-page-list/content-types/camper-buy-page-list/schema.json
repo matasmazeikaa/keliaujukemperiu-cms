@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "camper_buy_page_lists",
+  "info": {
+    "singularName": "camper-buy-page-list",
+    "pluralName": "camper-buy-page-lists",
+    "displayName": "Camper buy page list"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "service-page",
     "pluralName": "service-pages",
-    "displayName": "Service Page"
+    "displayName": "Service Page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -23,6 +24,11 @@
       "type": "component",
       "repeatable": false,
       "component": "sections.enumeration-section"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.seo"
     }
   }
 }

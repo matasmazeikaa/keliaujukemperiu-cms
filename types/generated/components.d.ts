@@ -100,6 +100,17 @@ export interface ComponentsListItem extends Schema.Component {
   };
 }
 
+export interface ComponentsSeo extends Schema.Component {
+  collectionName: 'components_components_seos';
+  info: {
+    displayName: 'seo';
+  };
+  attributes: {
+    metaTitle: Attribute.String;
+    metaDescription: Attribute.String;
+  };
+}
+
 export interface ComponentsTestimonial extends Schema.Component {
   collectionName: 'components_components_testimonials';
   info: {
@@ -261,6 +272,7 @@ declare module '@strapi/strapi' {
       'components.image-box-link': ComponentsImageBoxLink;
       'components.info': ComponentsInfo;
       'components.list-item': ComponentsListItem;
+      'components.seo': ComponentsSeo;
       'components.testimonial': ComponentsTestimonial;
       'sections.contact-us': SectionsContactUs;
       'sections.enumeration-section': SectionsEnumerationSection;

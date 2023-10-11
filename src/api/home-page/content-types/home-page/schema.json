@@ -29,6 +29,11 @@
         "sections.testimonial",
         "sections.hero-travel-guarantee-section"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.seo"
     }
   }
 }

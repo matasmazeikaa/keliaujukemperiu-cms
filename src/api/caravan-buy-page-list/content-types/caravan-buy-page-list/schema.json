@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "caravan_buy_page_lists",
+  "info": {
+    "singularName": "caravan-buy-page-list",
+    "pluralName": "caravan-buy-page-lists",
+    "displayName": "Caravan buy page list"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

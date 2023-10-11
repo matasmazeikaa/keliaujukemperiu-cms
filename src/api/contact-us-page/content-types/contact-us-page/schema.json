@@ -1,11 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "camper_rent_pages",
+  "collectionName": "contact_us_pages",
   "info": {
-    "singularName": "camper-rent-page",
-    "pluralName": "camper-rent-pages",
-    "displayName": "Camper rent page",
-    "description": ""
+    "singularName": "contact-us-page",
+    "pluralName": "contact-us-pages",
+    "displayName": "Contact us page"
   },
   "options": {
     "draftAndPublish": true
@@ -13,9 +12,6 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
-    },
-    "subtitle": {
       "type": "string"
     },
     "seo": {

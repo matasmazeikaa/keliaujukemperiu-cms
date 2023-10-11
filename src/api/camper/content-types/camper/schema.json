@@ -13,15 +13,17 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "previewDescription": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "thumbnail": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -33,13 +35,16 @@
       "type": "decimal"
     },
     "year": {
-      "type": "integer"
+      "type": "integer",
+      "required": true
     },
     "weight": {
-      "type": "decimal"
+      "type": "decimal",
+      "required": true
     },
     "tankCapacity": {
-      "type": "decimal"
+      "type": "decimal",
+      "required": true
     },
     "isForSale": {
       "type": "boolean",
@@ -50,13 +55,16 @@
       "enum": [
         "Automatinė",
         "Mechaninė"
-      ]
+      ],
+      "required": true
     },
     "placesToSleep": {
-      "type": "integer"
+      "type": "integer",
+      "required": true
     },
     "placesToSit": {
-      "type": "integer"
+      "type": "integer",
+      "required": true
     },
     "fridgeCapacity": {
       "type": "decimal"
@@ -64,7 +72,8 @@
     "complectation": {
       "type": "component",
       "repeatable": true,
-      "component": "components.list-item"
+      "component": "components.list-item",
+      "required": true
     },
     "isForRent": {
       "type": "boolean"
@@ -73,7 +82,8 @@
       "type": "decimal"
     },
     "heating": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "slug": {
       "type": "uid",
@@ -83,7 +93,7 @@
     "innerPageImages": {
       "type": "media",
       "multiple": true,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -92,7 +102,21 @@
       ]
     },
     "about": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
+    },
+    "priceFull": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.camper-prices"
+    },
+    "camperPriceInfo": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.info"
+    },
+    "isCaravan": {
+      "type": "boolean"
     }
   }
 }

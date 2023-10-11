@@ -4,7 +4,8 @@
   "info": {
     "singularName": "finance-page",
     "pluralName": "finance-pages",
-    "displayName": "Finance page"
+    "displayName": "Finance page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,6 +19,11 @@
       "type": "component",
       "repeatable": false,
       "component": "sections.images-left-text-right"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.seo"
     }
   }
 }
