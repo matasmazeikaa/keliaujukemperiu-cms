@@ -1,11 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "camper_rent_pages",
+  "collectionName": "camper_rent_page_lists",
   "info": {
-    "singularName": "camper-rent-page",
-    "pluralName": "camper-rent-pages",
-    "displayName": "Camper rent page",
-    "description": ""
+    "singularName": "camper-rent-page-list",
+    "pluralName": "camper-rent-page-lists",
+    "displayName": "Camper rent page list"
   },
   "options": {
     "draftAndPublish": true
@@ -13,9 +12,6 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
-    },
-    "subtitle": {
       "type": "string"
     },
     "seo": {

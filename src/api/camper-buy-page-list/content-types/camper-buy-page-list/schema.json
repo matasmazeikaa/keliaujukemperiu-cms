@@ -4,7 +4,8 @@
   "info": {
     "singularName": "camper-buy-page-list",
     "pluralName": "camper-buy-page-lists",
-    "displayName": "Camper buy page list"
+    "displayName": "Camper buy page list",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,11 @@
   "attributes": {
     "title": {
       "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.seo"
     }
   }
 }

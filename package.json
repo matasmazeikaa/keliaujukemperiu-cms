@@ -13,6 +13,7 @@
     "@_sh/strapi-plugin-ckeditor": "^2.0.4",
     "@strapi/plugin-i18n": "4.13.7",
     "@strapi/plugin-users-permissions": "4.13.7",
+    "@strapi/provider-email-nodemailer": "^4.14.5",
     "@strapi/strapi": "4.13.7",
     "better-sqlite3": "8.6.0",
     "install": "^0.13.0",

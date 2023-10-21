@@ -4,7 +4,7 @@
   "info": {
     "singularName": "rent-page",
     "pluralName": "rent-pages",
-    "displayName": "Rent page",
+    "displayName": "Camper rent page",
     "description": ""
   },
   "options": {
@@ -28,6 +28,11 @@
     },
     "subtitle": {
       "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.seo"
     }
   }
 }

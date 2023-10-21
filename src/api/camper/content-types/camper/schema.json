@@ -50,14 +50,6 @@
       "type": "boolean",
       "default": false
     },
-    "gearbox": {
-      "type": "enumeration",
-      "enum": [
-        "Automatinė",
-        "Mechaninė"
-      ],
-      "required": true
-    },
     "placesToSleep": {
       "type": "integer",
       "required": true
@@ -117,6 +109,17 @@
     },
     "isCaravan": {
       "type": "boolean"
+    },
+    "complectationForRent": {
+      "type": "text"
+    },
+    "gearbox": {
+      "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.seo"
     }
   }
 }

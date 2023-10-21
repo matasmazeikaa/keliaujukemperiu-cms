@@ -4,7 +4,8 @@
   "info": {
     "singularName": "caravan-buy-page-list",
     "pluralName": "caravan-buy-page-lists",
-    "displayName": "Caravan buy page list"
+    "displayName": "Caravan buy page list",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,11 @@
   "attributes": {
     "title": {
       "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.seo"
     }
   }
 }

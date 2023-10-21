@@ -4,7 +4,8 @@
   "info": {
     "singularName": "caravan-rent-page",
     "pluralName": "caravan-rent-pages",
-    "displayName": "Caravan rent page"
+    "displayName": "Caravan rent page list",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
