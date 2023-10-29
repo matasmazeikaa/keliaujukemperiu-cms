@@ -32,9 +32,6 @@
     "author": {
       "type": "string"
     },
-    "blog": {
-      "type": "richtext"
-    },
     "slug": {
       "type": "uid",
       "targetField": "title"
@@ -48,6 +45,13 @@
       "type": "component",
       "repeatable": false,
       "component": "components.seo"
+    },
+    "blog": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }

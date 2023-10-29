@@ -728,7 +728,6 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     thumbnail: Attribute.Media;
     previewSubtitle: Attribute.String;
     author: Attribute.String;
-    blog: Attribute.RichText;
     slug: Attribute.UID<'api::blog.blog', 'title'>;
     promotedBlogs: Attribute.Relation<
       'api::blog.blog',
@@ -736,6 +735,13 @@ export interface ApiBlogBlog extends Schema.CollectionType {
       'api::blog.blog'
     >;
     seo: Attribute.Component<'components.seo'>;
+    blog: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -796,30 +802,42 @@ export interface ApiCamperCamper extends Schema.CollectionType {
     title: Attribute.String & Attribute.Required;
     previewDescription: Attribute.Text & Attribute.Required;
     thumbnail: Attribute.Media & Attribute.Required;
-    pricePerDay: Attribute.Decimal;
     year: Attribute.Integer & Attribute.Required;
-    weight: Attribute.Decimal & Attribute.Required;
-    tankCapacity: Attribute.Decimal & Attribute.Required;
+    tankCapacity: Attribute.Decimal;
     isForSale: Attribute.Boolean & Attribute.DefaultTo<false>;
     placesToSleep: Attribute.Integer & Attribute.Required;
-    placesToSit: Attribute.Integer & Attribute.Required;
-    fridgeCapacity: Attribute.Decimal;
-    complectation: Attribute.Component<'components.list-item', true> &
-      Attribute.Required;
+    complectation: Attribute.Component<'components.list-item', true>;
     isForRent: Attribute.Boolean;
     price: Attribute.Decimal;
     heating: Attribute.String & Attribute.Required;
     slug: Attribute.UID<'api::camper.camper', 'title'> & Attribute.Required;
     innerPageImages: Attribute.Media & Attribute.Required;
-    about: Attribute.RichText & Attribute.Required;
     priceFull: Attribute.Component<'components.camper-prices', true>;
     camperPriceInfo: Attribute.Component<'components.info', true>;
     isCaravan: Attribute.Boolean;
-    complectationForRent: Attribute.Text;
     gearbox: Attribute.String;
     seo: Attribute.Component<'components.seo'>;
     visibleAttribute: Attribute.Component<'components.visible-attribute', true>;
     width: Attribute.String;
+    pricePerDay: Attribute.String;
+    fridgeCapacity: Attribute.String;
+    weight: Attribute.String;
+    complectationForRent: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
+    about: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
+    placesToSit: Attribute.String;
+    height: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

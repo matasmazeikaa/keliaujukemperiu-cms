@@ -31,20 +31,13 @@
         "audios"
       ]
     },
-    "pricePerDay": {
-      "type": "decimal"
-    },
     "year": {
       "type": "integer",
       "required": true
     },
-    "weight": {
-      "type": "decimal",
-      "required": true
-    },
     "tankCapacity": {
       "type": "decimal",
-      "required": true
+      "required": false
     },
     "isForSale": {
       "type": "boolean",
@@ -54,18 +47,11 @@
       "type": "integer",
       "required": true
     },
-    "placesToSit": {
-      "type": "integer",
-      "required": true
-    },
-    "fridgeCapacity": {
-      "type": "decimal"
-    },
     "complectation": {
       "type": "component",
       "repeatable": true,
       "component": "components.list-item",
-      "required": true
+      "required": false
     },
     "isForRent": {
       "type": "boolean"
@@ -93,10 +79,6 @@
         "audios"
       ]
     },
-    "about": {
-      "type": "richtext",
-      "required": true
-    },
     "priceFull": {
       "type": "component",
       "repeatable": true,
@@ -109,9 +91,6 @@
     },
     "isCaravan": {
       "type": "boolean"
-    },
-    "complectationForRent": {
-      "type": "text"
     },
     "gearbox": {
       "type": "string"
@@ -128,6 +107,35 @@
       "component": "components.visible-attribute"
     },
     "width": {
+      "type": "string"
+    },
+    "pricePerDay": {
+      "type": "string"
+    },
+    "fridgeCapacity": {
+      "type": "string"
+    },
+    "weight": {
+      "type": "string"
+    },
+    "complectationForRent": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "about": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "placesToSit": {
+      "type": "string"
+    },
+    "height": {
       "type": "string"
     }
   }
