@@ -122,6 +122,30 @@ export interface ComponentsTestimonial extends Schema.Component {
   };
 }
 
+export interface ComponentsVisibleAttribute extends Schema.Component {
+  collectionName: 'components_components_visible_attributes';
+  info: {
+    displayName: 'visibleAttribute';
+    description: '';
+  };
+  attributes: {
+    visibleAttribute: Attribute.Enumeration<
+      [
+        'year',
+        'weight',
+        'tankCapacity',
+        'placesToSleep',
+        'placesToSit',
+        'fridgeCapacity',
+        'price',
+        'heating',
+        'gearbox',
+        'width'
+      ]
+    >;
+  };
+}
+
 export interface SectionsContactUs extends Schema.Component {
   collectionName: 'components_sections_contact_uses';
   info: {
@@ -274,6 +298,7 @@ declare module '@strapi/strapi' {
       'components.list-item': ComponentsListItem;
       'components.seo': ComponentsSeo;
       'components.testimonial': ComponentsTestimonial;
+      'components.visible-attribute': ComponentsVisibleAttribute;
       'sections.contact-us': SectionsContactUs;
       'sections.enumeration-section': SectionsEnumerationSection;
       'sections.hero-subpage': SectionsHeroSubpage;

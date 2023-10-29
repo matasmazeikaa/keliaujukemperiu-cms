@@ -4,7 +4,7 @@
   "info": {
     "singularName": "camper",
     "pluralName": "campers",
-    "displayName": "Camper",
+    "displayName": "Kemperiai",
     "description": ""
   },
   "options": {
@@ -120,6 +120,15 @@
       "type": "component",
       "repeatable": false,
       "component": "components.seo"
+    },
+    "visibleAttribute": {
+      "displayName": "visibleAttribute",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.visible-attribute"
+    },
+    "width": {
+      "type": "string"
     }
   }
 }

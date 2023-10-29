@@ -4,7 +4,7 @@
   "info": {
     "singularName": "camper-rent-page-list",
     "pluralName": "camper-rent-page-lists",
-    "displayName": "Camper rent page list"
+    "displayName": "/nuoma/kemperiai"
   },
   "options": {
     "draftAndPublish": true

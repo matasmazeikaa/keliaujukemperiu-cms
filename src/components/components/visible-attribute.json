@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_components_visible_attributes",
+  "info": {
+    "displayName": "visibleAttribute",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "visibleAttribute": {
+      "type": "enumeration",
+      "enum": [
+        "year",
+        "weight",
+        "tankCapacity",
+        "placesToSleep",
+        "placesToSit",
+        "fridgeCapacity",
+        "price",
+        "heating",
+        "gearbox",
+        "width"
+      ]
+    }
+  }
+}

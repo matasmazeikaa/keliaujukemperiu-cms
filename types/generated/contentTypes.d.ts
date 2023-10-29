@@ -681,7 +681,7 @@ export interface ApiAboutUsPageAboutUsPage extends Schema.SingleType {
   info: {
     singularName: 'about-us-page';
     pluralName: 'about-us-pages';
-    displayName: 'About us page';
+    displayName: '/apie-mus';
     description: '';
   };
   options: {
@@ -717,7 +717,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   info: {
     singularName: 'blog';
     pluralName: 'blogs';
-    displayName: 'Blog';
+    displayName: 'Naujienos /naujienos';
     description: '';
   };
   options: {
@@ -751,7 +751,7 @@ export interface ApiCamberBuyPageCamberBuyPage extends Schema.SingleType {
   info: {
     singularName: 'camber-buy-page';
     pluralName: 'camber-buy-pages';
-    displayName: 'Camper buy page';
+    displayName: '/prekyba';
     description: '';
   };
   options: {
@@ -786,7 +786,7 @@ export interface ApiCamperCamper extends Schema.CollectionType {
   info: {
     singularName: 'camper';
     pluralName: 'campers';
-    displayName: 'Camper';
+    displayName: 'Kemperiai';
     description: '';
   };
   options: {
@@ -818,6 +818,8 @@ export interface ApiCamperCamper extends Schema.CollectionType {
     complectationForRent: Attribute.Text;
     gearbox: Attribute.String;
     seo: Attribute.Component<'components.seo'>;
+    visibleAttribute: Attribute.Component<'components.visible-attribute', true>;
+    width: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -842,7 +844,7 @@ export interface ApiCamperBuyPageListCamperBuyPageList
   info: {
     singularName: 'camper-buy-page-list';
     pluralName: 'camper-buy-page-lists';
-    displayName: 'Camper buy page list';
+    displayName: '/prekyba/kemperiai';
     description: '';
   };
   options: {
@@ -875,7 +877,7 @@ export interface ApiCamperEquipmentPageCamperEquipmentPage
   info: {
     singularName: 'camper-equipment-page';
     pluralName: 'camper-equipment-pages';
-    displayName: 'Camper equipment page';
+    displayName: '/iranga';
     description: '';
   };
   options: {
@@ -910,7 +912,7 @@ export interface ApiCamperRentPageListCamperRentPageList
   info: {
     singularName: 'camper-rent-page-list';
     pluralName: 'camper-rent-page-lists';
-    displayName: 'Camper rent page list';
+    displayName: '/nuoma/kemperiai';
   };
   options: {
     draftAndPublish: true;
@@ -942,7 +944,7 @@ export interface ApiCaravanBuyPageListCaravanBuyPageList
   info: {
     singularName: 'caravan-buy-page-list';
     pluralName: 'caravan-buy-page-lists';
-    displayName: 'Caravan buy page list';
+    displayName: '/prekyba/karavanai';
     description: '';
   };
   options: {
@@ -974,7 +976,7 @@ export interface ApiCaravanRentPageCaravanRentPage extends Schema.SingleType {
   info: {
     singularName: 'caravan-rent-page';
     pluralName: 'caravan-rent-pages';
-    displayName: 'Caravan rent page list';
+    displayName: '/nuoma/karavanai';
     description: '';
   };
   options: {
@@ -1038,7 +1040,7 @@ export interface ApiContactUsPageContactUsPage extends Schema.SingleType {
   info: {
     singularName: 'contact-us-page';
     pluralName: 'contact-us-pages';
-    displayName: 'Contact us page';
+    displayName: '/kontaktai';
   };
   options: {
     draftAndPublish: true;
@@ -1069,7 +1071,7 @@ export interface ApiFinancePageFinancePage extends Schema.SingleType {
   info: {
     singularName: 'finance-page';
     pluralName: 'finance-pages';
-    displayName: 'Finance page';
+    displayName: '/finansavimas';
     description: '';
   };
   options: {
@@ -1103,7 +1105,7 @@ export interface ApiGotQuestionSectionGotQuestionSection
   info: {
     singularName: 'got-question-section';
     pluralName: 'got-question-sections';
-    displayName: 'Got Question Section';
+    displayName: 'Turite klausimu (sekcija)';
     description: '';
   };
   options: {
@@ -1137,7 +1139,7 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
   info: {
     singularName: 'home-page';
     pluralName: 'home-pages';
-    displayName: 'Home Page';
+    displayName: '/ (pagrindinis)';
     description: '';
   };
   options: {
@@ -1181,7 +1183,7 @@ export interface ApiNewsPageNewsPage extends Schema.SingleType {
   info: {
     singularName: 'news-page';
     pluralName: 'news-pages';
-    displayName: 'News page';
+    displayName: '/naujienos';
   };
   options: {
     draftAndPublish: true;
@@ -1212,7 +1214,7 @@ export interface ApiPartnerPartner extends Schema.CollectionType {
   info: {
     singularName: 'partner';
     pluralName: 'partners';
-    displayName: 'Partner';
+    displayName: 'Partneriai /susikomplektuokite/:partneris';
     description: '';
   };
   options: {
@@ -1255,7 +1257,7 @@ export interface ApiPartnersSectionPartnersSection extends Schema.SingleType {
   info: {
     singularName: 'partners-section';
     pluralName: 'partners-sections';
-    displayName: 'Partners section';
+    displayName: 'Partneriu (sekcija)';
   };
   options: {
     draftAndPublish: true;
@@ -1286,7 +1288,7 @@ export interface ApiRentPageRentPage extends Schema.SingleType {
   info: {
     singularName: 'rent-page';
     pluralName: 'rent-pages';
-    displayName: 'Camper rent page';
+    displayName: '/nuoma';
     description: '';
   };
   options: {
@@ -1321,7 +1323,7 @@ export interface ApiServicePageServicePage extends Schema.SingleType {
   info: {
     singularName: 'service-page';
     pluralName: 'service-pages';
-    displayName: 'Service Page';
+    displayName: '/servisas';
     description: '';
   };
   options: {
@@ -1387,7 +1389,7 @@ export interface ApiTestimonialsSectionTestimonialsSection
   info: {
     singularName: 'testimonials-section';
     pluralName: 'testimonials-sections';
-    displayName: 'Testimonials Section';
+    displayName: 'Atsiliepimu (sekcija)';
     description: '';
   };
   options: {
