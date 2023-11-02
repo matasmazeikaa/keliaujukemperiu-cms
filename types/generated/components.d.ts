@@ -277,11 +277,6 @@ export interface SectionsTestimonial extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    testimonials: Attribute.Relation<
-      'sections.testimonial',
-      'oneToMany',
-      'api::testimonial.testimonial'
-    >;
   };
 }
 

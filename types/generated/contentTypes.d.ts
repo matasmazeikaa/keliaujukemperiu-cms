@@ -1370,37 +1370,6 @@ export interface ApiServicePageServicePage extends Schema.SingleType {
   };
 }
 
-export interface ApiTestimonialTestimonial extends Schema.CollectionType {
-  collectionName: 'testimonials';
-  info: {
-    singularName: 'testimonial';
-    pluralName: 'testimonials';
-    displayName: 'Testimonial';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    text: Attribute.Text;
-    author: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::testimonial.testimonial',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::testimonial.testimonial',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiTestimonialsSectionTestimonialsSection
   extends Schema.SingleType {
   collectionName: 'testimonials_sections';
@@ -1469,7 +1438,6 @@ declare module '@strapi/strapi' {
       'api::partners-section.partners-section': ApiPartnersSectionPartnersSection;
       'api::rent-page.rent-page': ApiRentPageRentPage;
       'api::service-page.service-page': ApiServicePageServicePage;
-      'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'api::testimonials-section.testimonials-section': ApiTestimonialsSectionTestimonialsSection;
     }
   }
