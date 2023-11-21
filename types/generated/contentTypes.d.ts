@@ -1196,6 +1196,28 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
   };
 }
 
+export interface ApiMetaMeta extends Schema.SingleType {
+  collectionName: 'metas';
+  info: {
+    singularName: 'meta';
+    pluralName: 'metas';
+    displayName: 'Meta';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ogImage: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::meta.meta', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::meta.meta', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiNewsPageNewsPage extends Schema.SingleType {
   collectionName: 'news_pages';
   info: {
@@ -1433,6 +1455,7 @@ declare module '@strapi/strapi' {
       'api::finance-page.finance-page': ApiFinancePageFinancePage;
       'api::got-question-section.got-question-section': ApiGotQuestionSectionGotQuestionSection;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::meta.meta': ApiMetaMeta;
       'api::news-page.news-page': ApiNewsPageNewsPage;
       'api::partner.partner': ApiPartnerPartner;
       'api::partners-section.partners-section': ApiPartnersSectionPartnersSection;
