@@ -769,6 +769,7 @@ export interface ApiCamberBuyPageCamberBuyPage extends Schema.SingleType {
     aboutSellCaravanSection: Attribute.Component<'sections.images-list-section'>;
     aboutFinanceSection: Attribute.Component<'sections.simple-section'>;
     seo: Attribute.Component<'components.seo'>;
+    partnerCategoryTitle: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -871,6 +872,7 @@ export interface ApiCamperBuyPageListCamperBuyPageList
   attributes: {
     title: Attribute.String;
     seo: Attribute.Component<'components.seo'>;
+    partnerCategoryTitle: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -19,6 +19,9 @@
       "type": "component",
       "repeatable": false,
       "component": "components.seo"
+    },
+    "partnerCategoryTitle": {
+      "type": "string"
     }
   }
 }
