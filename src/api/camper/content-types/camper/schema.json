@@ -141,7 +141,7 @@
     "additionalCampers": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::client-request.client-request"
+      "target": "api::camper.camper"
     }
   }
 }

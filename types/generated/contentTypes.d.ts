@@ -839,6 +839,11 @@ export interface ApiCamperCamper extends Schema.CollectionType {
       >;
     placesToSit: Attribute.String;
     height: Attribute.String;
+    additionalCampers: Attribute.Relation<
+      'api::camper.camper',
+      'oneToMany',
+      'api::camper.camper'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
