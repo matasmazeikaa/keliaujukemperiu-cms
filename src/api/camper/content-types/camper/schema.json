@@ -137,6 +137,11 @@
     },
     "height": {
       "type": "string"
+    },
+    "additionalCampers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::client-request.client-request"
     }
   }
 }
