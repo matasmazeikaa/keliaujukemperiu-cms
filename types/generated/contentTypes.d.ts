@@ -878,6 +878,13 @@ export interface ApiCamperBuyPageListCamperBuyPageList
     title: Attribute.String;
     seo: Attribute.Component<'components.seo'>;
     partnerCategoryTitle: Attribute.String;
+    seoSection: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -938,6 +945,7 @@ export interface ApiCamperRentPageListCamperRentPageList
     singularName: 'camper-rent-page-list';
     pluralName: 'camper-rent-page-lists';
     displayName: '/nuoma/kemperiai';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -945,6 +953,13 @@ export interface ApiCamperRentPageListCamperRentPageList
   attributes: {
     title: Attribute.String;
     seo: Attribute.Component<'components.seo'>;
+    seoSection: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -978,6 +993,13 @@ export interface ApiCaravanBuyPageListCaravanBuyPageList
   attributes: {
     title: Attribute.String;
     seo: Attribute.Component<'components.seo'>;
+    seoSection: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1010,6 +1032,13 @@ export interface ApiCaravanRentPageCaravanRentPage extends Schema.SingleType {
   attributes: {
     title: Attribute.String;
     seo: Attribute.Component<'components.seo'>;
+    seoSection: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1106,6 +1135,13 @@ export interface ApiFinancePageFinancePage extends Schema.SingleType {
     title: Attribute.String;
     aboutFinancingSection: Attribute.Component<'sections.images-left-text-right'>;
     seo: Attribute.Component<'components.seo'>;
+    seoSection: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1381,6 +1417,13 @@ export interface ApiServicePageServicePage extends Schema.SingleType {
     aboutServiceSection: Attribute.Component<'sections.images-left-text-right'>;
     providedServicesSection: Attribute.Component<'sections.enumeration-section'>;
     seo: Attribute.Component<'components.seo'>;
+    seoSection: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

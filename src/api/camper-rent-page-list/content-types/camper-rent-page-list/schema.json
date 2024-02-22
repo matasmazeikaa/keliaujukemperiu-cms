@@ -4,7 +4,8 @@
   "info": {
     "singularName": "camper-rent-page-list",
     "pluralName": "camper-rent-page-lists",
-    "displayName": "/nuoma/kemperiai"
+    "displayName": "/nuoma/kemperiai",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,6 +19,13 @@
       "type": "component",
       "repeatable": false,
       "component": "components.seo"
+    },
+    "seoSection": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }
