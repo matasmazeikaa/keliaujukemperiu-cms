@@ -1,11 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "camper_buy_page_lists",
+  "collectionName": "duks",
   "info": {
-    "singularName": "camper-buy-page-list",
-    "pluralName": "camper-buy-page-lists",
-    "displayName": "/prekyba/kemperiu-pardavimas",
-    "description": ""
+    "singularName": "duk",
+    "pluralName": "duks",
+    "displayName": "/duk"
   },
   "options": {
     "draftAndPublish": true
@@ -19,9 +18,6 @@
       "type": "component",
       "repeatable": false,
       "component": "components.seo"
-    },
-    "partnerCategoryTitle": {
-      "type": "string"
     },
     "seoSection": {
       "type": "customField",

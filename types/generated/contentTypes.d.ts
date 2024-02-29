@@ -868,7 +868,7 @@ export interface ApiCamperBuyPageListCamperBuyPageList
   info: {
     singularName: 'camper-buy-page-list';
     pluralName: 'camper-buy-page-lists';
-    displayName: '/prekyba/kemperiai';
+    displayName: '/prekyba/kemperiu-pardavimas';
     description: '';
   };
   options: {
@@ -944,7 +944,7 @@ export interface ApiCamperRentPageListCamperRentPageList
   info: {
     singularName: 'camper-rent-page-list';
     pluralName: 'camper-rent-page-lists';
-    displayName: '/nuoma/kemperiai';
+    displayName: '/nuoma/kemperiu-nuoma';
     description: '';
   };
   options: {
@@ -984,7 +984,7 @@ export interface ApiCaravanBuyPageListCaravanBuyPageList
   info: {
     singularName: 'caravan-buy-page-list';
     pluralName: 'caravan-buy-page-lists';
-    displayName: '/prekyba/karavanai';
+    displayName: '/prekyba/parduodami-karavanai';
     description: '';
   };
   options: {
@@ -1023,7 +1023,7 @@ export interface ApiCaravanRentPageCaravanRentPage extends Schema.SingleType {
   info: {
     singularName: 'caravan-rent-page';
     pluralName: 'caravan-rent-pages';
-    displayName: '/nuoma/karavanai';
+    displayName: '/nuoma/karavanu-nuoma';
     description: '';
   };
   options: {
@@ -1116,6 +1116,36 @@ export interface ApiContactUsPageContactUsPage extends Schema.SingleType {
       'oneToOne',
       'admin::user'
     > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDukDuk extends Schema.SingleType {
+  collectionName: 'duks';
+  info: {
+    singularName: 'duk';
+    pluralName: 'duks';
+    displayName: '/duk';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    seo: Attribute.Component<'components.seo'>;
+    seoSection: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::duk.duk', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::duk.duk', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -1406,7 +1436,7 @@ export interface ApiServicePageServicePage extends Schema.SingleType {
   info: {
     singularName: 'service-page';
     pluralName: 'service-pages';
-    displayName: '/servisas';
+    displayName: '/karavanu-ir-kemperiu-servisas';
     description: '';
   };
   options: {
@@ -1502,6 +1532,7 @@ declare module '@strapi/strapi' {
       'api::caravan-rent-page.caravan-rent-page': ApiCaravanRentPageCaravanRentPage;
       'api::client-request.client-request': ApiClientRequestClientRequest;
       'api::contact-us-page.contact-us-page': ApiContactUsPageContactUsPage;
+      'api::duk.duk': ApiDukDuk;
       'api::finance-page.finance-page': ApiFinancePageFinancePage;
       'api::got-question-section.got-question-section': ApiGotQuestionSectionGotQuestionSection;
       'api::home-page.home-page': ApiHomePageHomePage;
