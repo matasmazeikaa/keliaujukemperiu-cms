@@ -694,6 +694,13 @@ export interface ApiAboutUsPageAboutUsPage extends Schema.SingleType {
     info: Attribute.Component<'components.info', true>;
     slug: Attribute.UID<'api::about-us-page.about-us-page', 'title'>;
     seo: Attribute.Component<'components.seo'>;
+    seoSection: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -742,6 +749,13 @@ export interface ApiBlogBlog extends Schema.CollectionType {
           preset: 'toolbar';
         }
       >;
+    seoSection: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -770,6 +784,13 @@ export interface ApiCamberBuyPageCamberBuyPage extends Schema.SingleType {
     aboutFinanceSection: Attribute.Component<'sections.simple-section'>;
     seo: Attribute.Component<'components.seo'>;
     partnerCategoryTitle: Attribute.String;
+    seoSection: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -920,6 +941,13 @@ export interface ApiCamperEquipmentPageCamperEquipmentPage
     aboutCamperEquipmentSection: Attribute.Component<'sections.images-left-text-right'>;
     choosePartnerEquipmentSection: Attribute.Component<'sections.page-categories'>;
     seo: Attribute.Component<'components.seo'>;
+    seoSection: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1102,6 +1130,13 @@ export interface ApiContactUsPageContactUsPage extends Schema.SingleType {
   attributes: {
     title: Attribute.String;
     seo: Attribute.Component<'components.seo'>;
+    seoSection: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1251,6 +1286,13 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
       ]
     >;
     seo: Attribute.Component<'components.seo'>;
+    seoSection: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1304,6 +1346,13 @@ export interface ApiNewsPageNewsPage extends Schema.SingleType {
   attributes: {
     title: Attribute.String;
     seo: Attribute.Component<'components.seo'>;
+    seoSection: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1347,6 +1396,13 @@ export interface ApiPartnerPartner extends Schema.CollectionType {
     info: Attribute.Component<'components.info', true>;
     thumbnailAbout: Attribute.String;
     seo: Attribute.Component<'components.seo'>;
+    seoSection: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1413,6 +1469,13 @@ export interface ApiRentPageRentPage extends Schema.SingleType {
     chooseCaravanSection: Attribute.Component<'sections.images-list-section'>;
     subtitle: Attribute.String;
     seo: Attribute.Component<'components.seo'>;
+    seoSection: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

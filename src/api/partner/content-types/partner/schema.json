@@ -58,6 +58,13 @@
       "type": "component",
       "repeatable": false,
       "component": "components.seo"
+    },
+    "seoSection": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }
