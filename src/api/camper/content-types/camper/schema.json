@@ -142,6 +142,9 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::camper.camper"
+    },
+    "pricingTable": {
+      "type": "json"
     }
   }
 }

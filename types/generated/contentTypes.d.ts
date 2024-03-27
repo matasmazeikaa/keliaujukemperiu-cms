@@ -865,6 +865,7 @@ export interface ApiCamperCamper extends Schema.CollectionType {
       'oneToMany',
       'api::camper.camper'
     >;
+    pricingTable: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1494,6 +1495,47 @@ export interface ApiRentPageRentPage extends Schema.SingleType {
   };
 }
 
+export interface ApiRentpricingRentpricing extends Schema.SingleType {
+  collectionName: 'rentpricings';
+  info: {
+    singularName: 'rentpricing';
+    pluralName: 'rentpricings';
+    displayName: '/nuoma/kainorastis';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    seoSection: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
+    camperTitle: Attribute.String;
+    caravanTitle: Attribute.String;
+    seo: Attribute.Component<'components.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::rentpricing.rentpricing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::rentpricing.rentpricing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiServicePageServicePage extends Schema.SingleType {
   collectionName: 'service_pages';
   info: {
@@ -1604,6 +1646,7 @@ declare module '@strapi/strapi' {
       'api::partner.partner': ApiPartnerPartner;
       'api::partners-section.partners-section': ApiPartnersSectionPartnersSection;
       'api::rent-page.rent-page': ApiRentPageRentPage;
+      'api::rentpricing.rentpricing': ApiRentpricingRentpricing;
       'api::service-page.service-page': ApiServicePageServicePage;
       'api::testimonials-section.testimonials-section': ApiTestimonialsSectionTestimonialsSection;
     }

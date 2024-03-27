@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "rentpricings",
+  "info": {
+    "singularName": "rentpricing",
+    "pluralName": "rentpricings",
+    "displayName": "/nuoma/kainorastis",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "seoSection": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "camperTitle": {
+      "type": "string"
+    },
+    "caravanTitle": {
+      "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.seo"
+    }
+  }
+}
